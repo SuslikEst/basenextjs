@@ -5,7 +5,7 @@ const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
-const PORT = 4444;
+const PORT = 5555;
 
 app.prepare()
 .then(() => {
@@ -14,7 +14,7 @@ app.prepare()
 
   server.get('/post/:id', (req, res) => {
     const actualPage = '/post';
-    const queryParams = { title: req.params.id } ;
+    const queryParams = { id: req.params.id } ;
     app.render(req, res, actualPage, queryParams);
   })
 
